@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import shortid from 'shortid';
 import { toCamelCase } from './Utils';
 
@@ -43,5 +44,14 @@ function Book(props) {
     </div>
   );
 }
+
+Book.propTypes = {
+  coverURL: PropTypes.string.isRequired,
+  bookShelfList: PropTypes.arrayOf(PropTypes.string).isRequired,
+  title: PropTypes.string.isRequired,
+  authors: PropTypes.string.isRequired,
+  coverWidth: PropTypes.number.isRequired,
+  coverHeight: PropTypes.number.isRequired,
+};
 
 export default Book;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function SearchPage(props) {
   const {
@@ -39,5 +40,9 @@ function SearchPage(props) {
     </div>
   );
 }
+
+SearchPage.propTypes = {
+  onCloseSearch: PropTypes.func.isRequired,
+};
 
 export default SearchPage;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import BookShelf from './BookShelf';
 import Book from './Book';
 
@@ -110,5 +111,10 @@ function ListBookPage(props) {
     </div>
   );
 }
+
+ListBookPage.propTypes = {
+  onOpenSearch: PropTypes.func.isRequired,
+  bookShelves: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
 
 export default ListBookPage;
