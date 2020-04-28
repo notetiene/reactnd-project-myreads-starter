@@ -3,7 +3,7 @@ import Book from './Book';
 
 function ListBookPage(props) {
   const {
-    onOpenSearch
+    onOpenSearch,
   } = props;
 
   const bookShelves = [
