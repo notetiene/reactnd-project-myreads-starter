@@ -5,13 +5,8 @@ import Book from './Book';
 function ListBookPage(props) {
   const {
     onOpenSearch,
+    bookShelves,
   } = props;
-
-  const bookShelves = [
-    'Currently Reading',
-    'Want to Read',
-    'Read',
-  ];
 
   return (
     <div className="list-books">

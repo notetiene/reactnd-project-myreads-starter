@@ -10,10 +10,19 @@ class BooksApp extends React.Component {
     super(props);
 
     this.state = {
+      bookShelves: [
+        'Currently Reading',
+        'Want to Read',
+        'Read',
+      ],
     };
   }
 
   render() {
+    const {
+      bookShelves,
+    } = this.state;
+
     return (
       <div className="app">
         <Route
@@ -21,6 +30,7 @@ class BooksApp extends React.Component {
           path="/"
           render={({ history }) => (
             <ListBookPage
+              bookShelves={bookShelves}
               onOpenSearch={() => {
                 history.push('/search');
               }}
