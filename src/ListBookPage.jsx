@@ -40,7 +40,8 @@ function ListBookPage(props) {
             </li>
           </BookShelf>
           <BookShelf
-            title="Want to Read">
+            title="Want to Read"
+          >
             <li>
               <Book
                 bookShelfList={bookShelves}
@@ -63,7 +64,8 @@ function ListBookPage(props) {
             </li>
           </BookShelf>
           <BookShelf
-            title="Read">
+            title="Read"
+          >
             <li>
               <Book
                 bookShelfList={bookShelves}

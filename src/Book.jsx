@@ -1,5 +1,5 @@
 import React from 'react';
-import shortid from 'shortid'
+import shortid from 'shortid';
 import { toCamelCase } from './Utils';
 
 function Book(props) {

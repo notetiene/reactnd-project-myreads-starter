@@ -2,7 +2,7 @@ import React from 'react';
 
 function SearchPage(props) {
   const {
-    onCloseSearch
+    onCloseSearch,
   } = props;
 
   return (
