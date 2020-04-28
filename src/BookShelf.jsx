@@ -21,7 +21,7 @@ function BookShelf(props) {
 
 BookShelf.propTypes = {
   title: PropTypes.string.isRequired,
-  children: PropTypes.element.isRequired,
+  children: PropTypes.arrayOf(PropTypes.element).isRequired,
 };
 
 export default BookShelf;
