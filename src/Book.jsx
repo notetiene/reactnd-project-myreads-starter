@@ -34,6 +34,7 @@ function Book(props) {
                 {bookshelf}
               </option>
             ))}
+            <option value="none">None</option>
           </select>
         </div>
       </div>

@@ -11,7 +11,6 @@ function ListBookPage(props) {
     'Currently Reading',
     'Want to Read',
     'Read',
-    'None',
   ];
 
   return (
