@@ -126,21 +126,58 @@ class BooksApp extends React.Component {
     return books.find((book) => (book.id === bookID));
   }
 
+  addBook = async (bookID, bookShelf) => {
+    const {
+      title,
+      id,
+      authors,
+      imageLinks: {
+        thumbnail,
+      },
+    } = await BooksAPI.get(bookID);
+
+    this.setState((oldState) => ({
+      books: [...oldState.books, {
+        title,
+        id,
+        authors: authors.join(', '),
+        coverURL: thumbnail,
+        coverWidth: 128,
+        coverHeight: 192,
+        bookShelf,
+      }],
+    }));
+
+    BooksAPI.update({
+      id: bookID,
+    }, bookShelf);
+  }
+
+  moveBook = (bookID, bookShelf) => {
+    this.setState((oldState) => {
+      const {
+        books,
+      } = oldState;
+      const bookIndex = books.findIndex((element) => (element.id === bookID));
+
+      books[bookIndex].bookShelf = bookShelf;
+
+      return books;
+    });
+  }
+
   onMoveBook = (bookID, bookShelf) => {
+    const {
+      books,
+    } = this.state;
+    const bookIndex = books.findIndex((element) => (element.id === bookID));
+
     if (bookShelf === 'none') {
       this.removeBook(bookID);
+    } else if (bookIndex === -1) {
+      this.addBook(bookID, bookShelf);
     } else {
-      this.setState((oldState) => {
-        const {
-          books,
-        } = oldState;
-        const bookIndex = books.findIndex((element) => (element.id === bookID));
-        books[bookIndex].bookShelf = bookShelf;
-
-        return {
-          books,
-        };
-      });
+      this.moveBook(bookID, bookShelf);
     }
   }
 
@@ -174,6 +211,9 @@ class BooksApp extends React.Component {
               onCloseSearch={() => {
                 history.push('/');
               }}
+              bookShelves={bookShelves}
+              books={books}
+              onMoveBook={this.onMoveBook}
             />
           )}
         />

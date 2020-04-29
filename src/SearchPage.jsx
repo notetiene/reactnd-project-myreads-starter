@@ -28,6 +28,9 @@ class SearchPage extends Component {
   render() {
     const {
       onCloseSearch,
+      bookShelves,
+      books,
+      onMoveBook,
     } = this.props;
 
     const {
@@ -43,6 +46,9 @@ class SearchPage extends Component {
         />
         <SearchResults
           query={query}
+          bookShelfList={bookShelves}
+          books={books}
+          onMoveBook={onMoveBook}
         />
       </div>
     );
@@ -51,6 +57,16 @@ class SearchPage extends Component {
 
 SearchPage.propTypes = {
   onCloseSearch: PropTypes.func.isRequired,
+  bookShelves: PropTypes.arrayOf(PropTypes.string).isRequired,
+  books: PropTypes.arrayOf(PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    bookShelf: PropTypes.string.isRequired,
+    authors: PropTypes.string.isRequired,
+    coverWidth: PropTypes.number.isRequired,
+    coverHeight: PropTypes.number.isRequired,
+    coverURL: PropTypes.string.isRequired,
+  })).isRequired,
+  onMoveBook: PropTypes.func.isRequired,
 };
 
 export default SearchPage;
