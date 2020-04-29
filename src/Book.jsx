@@ -8,6 +8,7 @@ function Book(props) {
     coverURL,
     bookShelfList,
     title,
+    bookShelf,
     authors,
     coverWidth,
     coverHeight,
@@ -25,7 +26,9 @@ function Book(props) {
           }}
         />
         <div className="book-shelf-changer">
-          <select>
+          <select
+            defaultValue={bookShelf}
+          >
             <option value="move" disabled>Move to...</option>
             {bookShelfList.map((bookshelf) => (
               <option
@@ -48,6 +51,7 @@ function Book(props) {
 Book.propTypes = {
   coverURL: PropTypes.string.isRequired,
   bookShelfList: PropTypes.arrayOf(PropTypes.string).isRequired,
+  bookShelf: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   authors: PropTypes.string.isRequired,
   coverWidth: PropTypes.number.isRequired,

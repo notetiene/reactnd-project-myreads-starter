@@ -27,6 +27,7 @@ function BookShelf(props) {
                 bookShelfList={bookShelfList}
                 title={book.title}
                 authors={book.authors}
+                bookShelf={book.bookShelf}
                 coverWidth={book.coverWidth}
                 coverHeight={book.coverHeight}
                 coverURL={book.coverURL}
