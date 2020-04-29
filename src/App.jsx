@@ -134,8 +134,8 @@ class BooksApp extends React.Component {
         const {
           books,
         } = oldState;
-        const bookdIndex = books.findIndex((element) => (element.id === bookID));
-        books[bookdIndex].bookShelf = bookShelf;
+        const bookIndex = books.findIndex((element) => (element.id === bookID));
+        books[bookIndex].bookShelf = bookShelf;
 
         return {
           books,
