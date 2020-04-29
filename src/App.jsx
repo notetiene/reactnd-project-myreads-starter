@@ -94,7 +94,7 @@ class BooksApp extends React.Component {
         title,
         id,
         bookShelf: shelf,
-        authors: authors.join(', '),
+        authors: (authors && authors.length > 0 && authors.join(', ')) || 'Unknown',
         coverURL: thumbnail,
         coverWidth: 128,
         coverHeight: 192,
@@ -140,7 +140,7 @@ class BooksApp extends React.Component {
       books: [...oldState.books, {
         title,
         id,
-        authors: authors.join(', '),
+        authors: (authors && authors.length > 0 && authors.join(', ')) || 'Unknown',
         coverURL: thumbnail,
         coverWidth: 128,
         coverHeight: 192,
