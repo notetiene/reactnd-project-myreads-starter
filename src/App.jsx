@@ -13,6 +13,7 @@ class BooksApp extends React.Component {
       books: [
         {
           title: 'To Kill a Mockingbird',
+          id: 'aaaaa',
           bookShelf: 'currentlyReading',
           authors: 'Harper Lee',
           coverWidth: 128,
@@ -20,6 +21,7 @@ class BooksApp extends React.Component {
           coverURL: 'http://books.google.com/books/content?id=PGR2AwAAQBAJ&printsec=frontcover&img=1&zoom=1',
         }, {
           title: 'Ender’s Game',
+          id: 'bbbbb',
           bookShelf: 'currentlyReading',
           authors: 'Orson Scott Card',
           coverWidth: 128,
@@ -27,6 +29,7 @@ class BooksApp extends React.Component {
           coverURL: 'http://books.google.com/books/content?id=yDtCuFHXbAYC&printsec=frontcover&img=1&zoom=1',
         }, {
           title: 'Harry Potter and the Sorcerer’s Stone',
+          id: 'ccccc',
           bookShelf: 'wantToRead',
           authors: 'J.K. Rowling',
           coverWidth: 128,
@@ -34,6 +37,7 @@ class BooksApp extends React.Component {
           coverURL: 'http://books.google.com/books/content?id=uu1mC6zWNTwC&printsec=frontcover&img=1&zoom=1',
         }, {
           title: '1776',
+          id: 'ddddd',
           bookShelf: 'wantToRead',
           authors: 'David McCullough',
           coverWidth: 128,
@@ -41,6 +45,7 @@ class BooksApp extends React.Component {
           coverURL: 'http://books.google.com/books/content?id=wrOQLV6xB-wC&printsec=frontcover&img=1&zoom=1',
         }, {
           title: 'The Hobbit',
+          id: 'eeeee',
           bookShelf: 'read',
           authors: 'J.R.R. Tolkien',
           coverWidth: 128,
@@ -48,6 +53,7 @@ class BooksApp extends React.Component {
           coverURL: 'http://books.google.com/books/content?id=pD6arNyKyi8C&printsec=frontcover&img=1&zoom=1',
         }, {
           title: 'Oh, the Places You’ll Go!',
+          id: 'fffff',
           bookShelf: 'read',
           authors: 'Seuss',
           coverWidth: 128,
@@ -55,6 +61,7 @@ class BooksApp extends React.Component {
           coverURL: 'http://books.google.com/books/content?id=1q_xAwAAQBAJ&printsec=frontcover&img=1&zoom=1',
         }, {
           title: 'The Adventures of Tom Sawyer',
+          id: 'ggggg',
           bookShelf: 'read',
           authors: 'Mark Twain',
           coverWidth: 128,
@@ -75,6 +82,7 @@ class BooksApp extends React.Component {
     const books = bookList.map((book) => {
       const {
         title,
+        id,
         authors,
         shelf,
         imageLinks: {
@@ -84,6 +92,7 @@ class BooksApp extends React.Component {
 
       return {
         title,
+        id,
         bookShelf: shelf,
         authors: authors.join(', '),
         coverURL: thumbnail,

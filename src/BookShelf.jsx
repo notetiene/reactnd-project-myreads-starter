@@ -25,6 +25,7 @@ function BookShelf(props) {
             >
               <Book
                 bookShelfList={bookShelfList}
+                bookdID={book.id}
                 title={book.title}
                 authors={book.authors}
                 bookShelf={book.bookShelf}
