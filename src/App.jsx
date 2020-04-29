@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-// import * as BooksAPI from './BooksAPI'
+import * as BooksAPI from './BooksAPI';
 import './App.css';
 import SearchPage from './SearchPage';
 import ListBookPage from './ListBookPage';
@@ -68,6 +68,33 @@ class BooksApp extends React.Component {
         'Read',
       ],
     };
+  }
+
+  async componentDidMount() {
+    const bookList = await BooksAPI.getAll();
+    const books = bookList.map((book) => {
+      const {
+        title,
+        authors,
+        shelf,
+        imageLinks: {
+          thumbnail,
+        },
+      } = book;
+
+      return {
+        title,
+        bookShelf: shelf,
+        authors: authors.join(', '),
+        coverURL: thumbnail,
+        coverWidth: 128,
+        coverHeight: 192,
+      };
+    });
+
+    this.setState(() => ({
+      books,
+    }));
   }
 
   render() {
