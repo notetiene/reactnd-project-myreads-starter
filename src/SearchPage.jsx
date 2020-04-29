@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import SearchInput from './SearchInput';
 
 class SearchPage extends Component {
   constructor(props) {
@@ -8,6 +9,18 @@ class SearchPage extends Component {
     this.state = {
       query: '',
     };
+  }
+
+  handleInputChange = (event) => {
+    const {
+      target: {
+        value,
+      },
+    } = event;
+
+    this.setState(() => ({
+      query: value,
+    }));
   }
 
   render() {
@@ -40,15 +53,17 @@ class SearchPage extends Component {
                you don't find a specific author or title. Every
                search is limited by search terms.
              */}
-            <input
-              type="text"
+            <SearchInput
+              onChange={this.handleInputChange}
               placeholder="Search by title or author"
             />
 
           </div>
         </div>
         <div className="search-books-results">
-          <ol className="books-grid" />
+          <ol className="books-grid">
+            {query}
+          </ol>
         </div>
       </div>
     );
