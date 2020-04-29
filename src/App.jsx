@@ -106,6 +106,44 @@ class BooksApp extends React.Component {
     }));
   }
 
+  removeBook = (bookID) => {
+    this.setState((oldState) => {
+      const book = this.getBook(bookID);
+
+      BooksAPI.update(book, 'none');
+
+      return {
+        books: oldState.books.filter((b) => (b.id !== bookID)),
+      };
+    });
+  }
+
+  getBook = (bookID) => {
+    const {
+      books,
+    } = this.state;
+
+    return books.find((book) => (book.id === bookID));
+  }
+
+  onMoveBook = (bookID, bookShelf) => {
+    if (bookShelf === 'none') {
+      this.removeBook(bookID);
+    } else {
+      this.setState((oldState) => {
+        const {
+          books,
+        } = oldState;
+        const bookdIndex = books.findIndex((element) => (element.id === bookID));
+        books[bookdIndex].bookShelf = bookShelf;
+
+        return {
+          books,
+        };
+      });
+    }
+  }
+
   render() {
     const {
       books,
@@ -124,6 +162,7 @@ class BooksApp extends React.Component {
               onOpenSearch={() => {
                 history.push('/search');
               }}
+              onMoveBook={this.onMoveBook}
             />
           )}
         />

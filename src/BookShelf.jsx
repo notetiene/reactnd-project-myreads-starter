@@ -10,6 +10,7 @@ function BookShelf(props) {
     title,
     books,
     bookShelfList,
+    onMoveBook,
   } = props;
 
   const bookShelfID = toCamelCase(title);
@@ -25,13 +26,14 @@ function BookShelf(props) {
             >
               <Book
                 bookShelfList={bookShelfList}
-                bookdID={book.id}
+                bookID={book.id}
                 title={book.title}
                 authors={book.authors}
                 bookShelf={book.bookShelf}
                 coverWidth={book.coverWidth}
                 coverHeight={book.coverHeight}
                 coverURL={book.coverURL}
+                onMoveBook={onMoveBook}
               />
             </li>
           ))}
@@ -52,6 +54,7 @@ BookShelf.propTypes = {
     coverURL: PropTypes.string.isRequired,
   })).isRequired,
   bookShelfList: PropTypes.arrayOf(PropTypes.string).isRequired,
+  onMoveBook: PropTypes.func.isRequired,
 };
 
 export default BookShelf;

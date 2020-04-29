@@ -8,6 +8,7 @@ function ListBookPage(props) {
     books,
     bookShelves,
     onOpenSearch,
+    onMoveBook,
   } = props;
 
   return (
@@ -22,6 +23,7 @@ function ListBookPage(props) {
               title={bookShelf}
               bookShelfList={bookShelves}
               books={books}
+              onMoveBook={onMoveBook}
               key={shortid()}
             />
           ))}
@@ -50,6 +52,7 @@ ListBookPage.propTypes = {
   })).isRequired,
   onOpenSearch: PropTypes.func.isRequired,
   bookShelves: PropTypes.arrayOf(PropTypes.string).isRequired,
+  onMoveBook: PropTypes.func.isRequired,
 };
 
 export default ListBookPage;
