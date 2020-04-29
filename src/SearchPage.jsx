@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import SearchInput from './SearchInput';
+import SearchResults from './SearchResults';
 
 class SearchPage extends Component {
   constructor(props) {
@@ -60,11 +61,9 @@ class SearchPage extends Component {
 
           </div>
         </div>
-        <div className="search-books-results">
-          <ol className="books-grid">
-            {query}
-          </ol>
-        </div>
+        <SearchResults
+          query={query}
+        />
       </div>
     );
   }
