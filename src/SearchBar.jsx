@@ -8,7 +8,8 @@ import SearchInput from './SearchInput';
  * @param {object} props - A properties object.
  * @param {string} props.placeholder - Default text to show when input is empty.
  * @param {function} props.onChange - Function to handle changes in search input value.
- * @param {function} props.onCloseSearch - Function to execute when closing the current {@link SearchPage}.
+ * @param {function} props.onCloseSearch - Function to execute when closing the current
+ * {@link SearchPage}.
  * @returns {Component} The new or updated component.
  */
 function SearchBar(props) {

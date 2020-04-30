@@ -11,8 +11,10 @@ import { toCamelCase } from './Utils';
  * @param {object} props - A properties object.
  * @param {string} props.title - The bookshielf title.
  * @param {Book[]} props.books - A list of {@link Book} to show.
- * @param {function} props.onMoveBook - Function to executed when (re)moving a {@link Book} from a bookshelf.
- * @param {string[]} props.bookShelves - A list of bookshelf names in their displayed form.  Used for moving books.
+ * @param {function} props.onMoveBook - Function to executed when (re)moving a {@link Book} from a
+ * bookshelf.
+ * @param {string[]} props.bookShelves - A list of bookshelf names in their displayed form.  Used
+ * for moving books.
  * @returns {Component} The new or updated component.
  */
 function BookShelf(props) {

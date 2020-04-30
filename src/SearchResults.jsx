@@ -10,7 +10,6 @@ import * as BooksAPI from './BooksAPI';
  * @extends Component
  */
 class SearchResults extends Component {
-
   /**
    * {@link SearchResults} constructor.
    * @param {object} props - A properties object.

@@ -150,7 +150,8 @@ class BooksApp extends React.Component {
   /**
    * Add a book to the recorded books ({@link Book.state.books}) and remote registry.
    * @param {string} bookID - A unique identifier for the book.  Id provided by {@link BooksAPI}.
-   * @param {string} bookShelf - Bookshelf to add the book to.  Must be the canonical form (camelCase).
+   * @param {string} bookShelf - Bookshelf to add the book to.  Must be the canonical form
+   * (camelCase).
    */
   addBook = async (bookID, bookShelf) => {
     const {
@@ -182,7 +183,8 @@ class BooksApp extends React.Component {
   /**
    * Move a specified book to an other bookshielf.
    * @param {string} bookID - A unique identifier for the book.  Id provided by {@link BooksAPI}.
-   * @param {string} bookShelf - Bookshelf to add the book to.  Must be the canonical form (camelCase).
+   * @param {string} bookShelf - Bookshelf to add the book to.  Must be the canonical form
+   * (camelCase).
    */
   moveBook = (bookID, bookShelf) => {
     this.setState((oldState) => {
@@ -200,7 +202,8 @@ class BooksApp extends React.Component {
   /**
    * Act on the book registry according to user input.
    * @param {string} bookID - A unique identifier for the book.  Id provided by {@link BooksAPI}.
-   * @param {string} bookShelf - Bookshelf to add/(re)move the book.  Must be the canonical form (camelCase).  If “none”, remove book.
+   * @param {string} bookShelf - Bookshelf to add/(re)move the book.  Must be the canonical form
+   * (camelCase).  If “none”, remove book.
    */
   onMoveBook = (bookID, bookShelf) => {
     const {

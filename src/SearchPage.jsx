@@ -26,7 +26,8 @@ class SearchPage extends Component {
   }
 
   /**
-   * Handle input change from the {@link SearchInput} component.  This sets the state to the new query to be passed to {@link SearchResuls}.
+   * Handle input change from the {@link SearchInput} component.  This sets the state to the new
+   * query to be passed to {@link SearchResuls}.
    * @param {Event} event - Change event when the input has changed its value.
    */
   handleInputChange = (event) => {
@@ -42,7 +43,8 @@ class SearchPage extends Component {
   }
 
   /**
-   * Render a {@link SearchPage} using a {@link SearchBar} component and a {@link SearchResults} component.
+   * Render a {@link SearchPage} using a {@link SearchBar} component and a {@link SearchResults}
+   * component.
    * @returns {Component} The new or updated component.
    */
   render() {

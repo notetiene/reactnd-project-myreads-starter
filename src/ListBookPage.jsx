@@ -8,8 +8,10 @@ import BookShelf from './BookShelf';
  * @class
  * @param {object} props - A properties object.
  * @param {Book[]} props.books - A list of {@link Book} to show.
- * @param {function} props.onOpenSearch - Function to execute when quitting the current page to the {@link SearchPage}.
- * @param {function} props.onMoveBook - Function to executed when (re)moving a {@link Book} from a bookshelf.
+ * @param {function} props.onOpenSearch - Function to execute when quitting the current page to the
+ * {@link SearchPage}.
+ * @param {function} props.onMoveBook - Function to executed when (re)moving a {@link Book} from a
+ * bookshelf.
  * @param {string[]} props.bookShelves - A list of bookshelf names in their displayed form.
  * @returns {Component} The new or updated component.
  */
