@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import SearchInput from './SearchInput';
+import SearchBookInput from './SearchBookInput';
 
 /**
  * Search bar component that contains main controls of a {@link SearchBookPage}.
@@ -29,7 +29,7 @@ function SearchBookBar(props) {
         Close
       </button>
       <div className="search-books-input-wrapper">
-        <SearchInput
+        <SearchBookInput
           onChange={onChange}
           placeholder={placeholder}
         />

@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
  * @param {function} props.onChange - Function to handle changes in input value.
  * @returns {Component} The new or updated component.
  */
-function SearchInput(props) {
+function SearchBookInput(props) {
   const {
     placeholder,
     onChange,
@@ -24,9 +24,9 @@ function SearchInput(props) {
   );
 }
 
-SearchInput.propTypes = {
+SearchBookInput.propTypes = {
   placeholder: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
 };
 
-export default SearchInput;
+export default SearchBookInput;

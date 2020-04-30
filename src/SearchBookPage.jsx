@@ -27,7 +27,7 @@ class SearchBookPage extends Component {
   }
 
   /**
-   * Handle input change from the {@link SearchInput} component.  This sets the state to the new
+   * Handle input change from the {@link SearchBookInput} component.  This sets the state to the new
    * query to be passed to {@link SearchResuls}.
    * @param {Event} event - Change event when the input has changed its value.
    */
