@@ -86,8 +86,8 @@ class BooksApp extends React.Component {
         authors,
         shelf,
         imageLinks: {
-          thumbnail,
-        },
+          thumbnail = '',
+        } = '',
       } = book;
 
       return {
@@ -132,8 +132,8 @@ class BooksApp extends React.Component {
       id,
       authors,
       imageLinks: {
-        thumbnail,
-      },
+        thumbnail = '',
+      } = '',
     } = await BooksAPI.get(bookID);
 
     this.setState((oldState) => ({

@@ -43,8 +43,6 @@ class SearchResults extends Component {
       results,
     } = this.state;
 
-    const defaultCover = 'http://books.google.com/books/content?id=&printsec=frontcover&img=1&zoom=1';
-
     return (
       <div className="search-books-results">
         {query && (
@@ -61,8 +59,8 @@ class SearchResults extends Component {
                   id,
                   authors,
                   imageLinks: {
-                    thumbnail,
-                  } = defaultCover,
+                    thumbnail = '',
+                  } = '',
                 } = result;
 
                 const book = books.find((b) => b.id === id);

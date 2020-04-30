@@ -16,6 +16,8 @@ function Book(props) {
     onMoveBook,
   } = props;
 
+  const defaultCover = 'http://books.google.com/books/content?id=&printsec=frontcover&img=1&zoom=1';
+
   return (
     <div className="book">
       <div className="book-top">
@@ -24,7 +26,7 @@ function Book(props) {
           style={{
             width: coverWidth,
             height: coverHeight,
-            backgroundImage: `url("${coverURL}")`,
+            backgroundImage: `url("${coverURL || defaultCover}")`,
           }}
         />
         <div className="book-shelf-changer">
