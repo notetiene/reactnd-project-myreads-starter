@@ -9,9 +9,9 @@ import * as BooksAPI from './BooksAPI';
  * 20 books according to the API used.
  * @extends Component
  */
-class SearchResults extends Component {
+class SearchBookResults extends Component {
   /**
-   * {@link SearchResults} constructor.
+   * {@link SearchBookResults} constructor.
    * @param {object} props - A properties object.
    * @param {string} props.query - The query for matching a list of books.
    * @param {Book[]} props.books - A list of Book in already parent state.
@@ -42,7 +42,7 @@ class SearchResults extends Component {
   }
 
   /**
-   * Update the {@link SearchResults.state.results} to the new results.
+   * Update the {@link SearchBookResults.state.results} to the new results.
    * @param {string} query - The query for matching a list of books.
    */
   updateBookList = (query) => {
@@ -55,7 +55,7 @@ class SearchResults extends Component {
   }
 
   /**
-   * Render a {@link SearchResults} using {@link Book} components.
+   * Render a {@link SearchBookResults} using {@link Book} components.
    * @returns {Component} The new or updated component.
    */
   render() {
@@ -121,7 +121,7 @@ class SearchResults extends Component {
   }
 }
 
-SearchResults.propTypes = {
+SearchBookResults.propTypes = {
   query: PropTypes.string.isRequired,
   books: PropTypes.arrayOf(PropTypes.shape({
     title: PropTypes.string.isRequired,
@@ -135,4 +135,4 @@ SearchResults.propTypes = {
   bookShelfList: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
-export default SearchResults;
+export default SearchBookResults;

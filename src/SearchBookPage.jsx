@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import SearchBookBar from './SearchBookBar';
-import SearchResults from './SearchResults';
+import SearchBookResults from './SearchBookResults';
 
 
 /**
@@ -28,7 +28,7 @@ class SearchBookPage extends Component {
 
   /**
    * Handle input change from the {@link SearchBookInput} component.  This sets the state to the new
-   * query to be passed to {@link SearchResuls}.
+   * query to be passed to {@link SearchBookResuls}.
    * @param {Event} event - Change event when the input has changed its value.
    */
   handleInputChange = (event) => {
@@ -44,7 +44,7 @@ class SearchBookPage extends Component {
   }
 
   /**
-   * Render a {@link SearchBookPage} using a {@link SearchBookBar} component and a {@link SearchResults}
+   * Render a {@link SearchBookPage} using a {@link SearchBookBar} component and a {@link SearchBookResults}
    * component.
    * @returns {Component} The new or updated component.
    */
@@ -67,7 +67,7 @@ class SearchBookPage extends Component {
           onChange={this.handleInputChange}
           placeholder="Search by title or author"
         />
-        <SearchResults
+        <SearchBookResults
           query={query}
           bookShelfList={bookShelves}
           books={books}
