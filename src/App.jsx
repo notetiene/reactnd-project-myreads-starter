@@ -2,7 +2,7 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import * as BooksAPI from './BooksAPI';
 import './App.css';
-import SearchPage from './SearchPage';
+import SearchBookPage from './SearchBookPage';
 import ListBookPage from './ListBookPage';
 
 /**
@@ -221,7 +221,7 @@ class BooksApp extends React.Component {
   }
 
   /**
-   * Render a {@link BookApp} using {@link ListBookPage} and {@link SearchPage} components.
+   * Render a {@link BookApp} using {@link ListBookPage} and {@link SearchBookPage} components.
    * @returns {Component} The new or updated component.
    */
   render() {
@@ -250,7 +250,7 @@ class BooksApp extends React.Component {
           exact
           path="/search"
           render={({ history }) => (
-            <SearchPage
+            <SearchBookPage
               onCloseSearch={() => {
                 history.push('/');
               }}

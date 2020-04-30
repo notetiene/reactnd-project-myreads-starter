@@ -7,13 +7,14 @@ import SearchResults from './SearchResults';
 /**
  * A page to search remote books to add/move to a bookshelf.
  */
-class SearchPage extends Component {
+class SearchBookPage extends Component {
   /**
-   * {@link SearchPage} constructor
+   * {@link SearchBookPage} constructor
    * @constructor
    * @param {object} props - A properties object.
    * @param {Book[]} props.books - A list of Book already in parent state.
-   * @param {function} props.onCloseSearch - A function to quit the SearchPage component.V
+   * @param {function} props.onCloseSearch - A function to quit the {@link SearchBookPage}
+   * component.
    * @param {function} props.onMoveBook - A function to move a book to an other bookshelf.
    * @param {string[]} props.bookShelves - A list of bookshelf to move the book in.
    */
@@ -43,7 +44,7 @@ class SearchPage extends Component {
   }
 
   /**
-   * Render a {@link SearchPage} using a {@link SearchBar} component and a {@link SearchResults}
+   * Render a {@link SearchBookPage} using a {@link SearchBar} component and a {@link SearchResults}
    * component.
    * @returns {Component} The new or updated component.
    */
@@ -77,7 +78,7 @@ class SearchPage extends Component {
   }
 }
 
-SearchPage.propTypes = {
+SearchBookPage.propTypes = {
   books: PropTypes.arrayOf(PropTypes.shape({
     title: PropTypes.string.isRequired,
     bookShelf: PropTypes.string.isRequired,
@@ -91,4 +92,4 @@ SearchPage.propTypes = {
   bookShelves: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
-export default SearchPage;
+export default SearchBookPage;
