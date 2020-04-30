@@ -12,10 +12,10 @@ class SearchPage extends Component {
    * {@link SearchPage} constructor
    * @constructor
    * @param {object} props - A properties object.
+   * @param {Book[]} props.books - A list of Book already in parent state.
    * @param {function} props.onCloseSearch - A function to quit the SearchPage component.V
    * @param {function} props.onMoveBook - A function to move a book to an other bookshelf.
    * @param {string[]} props.bookShelves - A list of bookshelf to move the book in.
-   * @param {Book[]} props.books - A list of Book already in parent state.
    */
   constructor(props) {
     super(props);
@@ -47,10 +47,10 @@ class SearchPage extends Component {
    */
   render() {
     const {
-      onCloseSearch,
-      bookShelves,
       books,
+      onCloseSearch,
       onMoveBook,
+      bookShelves,
     } = this.props;
 
     const {
@@ -76,8 +76,6 @@ class SearchPage extends Component {
 }
 
 SearchPage.propTypes = {
-  onCloseSearch: PropTypes.func.isRequired,
-  bookShelves: PropTypes.arrayOf(PropTypes.string).isRequired,
   books: PropTypes.arrayOf(PropTypes.shape({
     title: PropTypes.string.isRequired,
     bookShelf: PropTypes.string.isRequired,
@@ -86,7 +84,9 @@ SearchPage.propTypes = {
     coverHeight: PropTypes.number.isRequired,
     coverURL: PropTypes.string.isRequired,
   })).isRequired,
+  onCloseSearch: PropTypes.func.isRequired,
   onMoveBook: PropTypes.func.isRequired,
+  bookShelves: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default SearchPage;

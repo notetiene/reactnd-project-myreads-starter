@@ -6,16 +6,16 @@ import SearchInput from './SearchInput';
  * Search bar component that contains main controls of a {@link SearchPage}.
  * @class
  * @param {object} props - A properties object.
- * @param {function} props.onCloseSearch - Function to execute when closing the current {@link SearchPage}.
- * @param {function} props.onChange - Function to handle changes in search input value.
  * @param {string} props.placeholder - Default text to show when input is empty.
+ * @param {function} props.onChange - Function to handle changes in search input value.
+ * @param {function} props.onCloseSearch - Function to execute when closing the current {@link SearchPage}.
  * @returns {Component} The new or updated component.
  */
 function SearchBar(props) {
   const {
-    onCloseSearch,
-    onChange,
     placeholder,
+    onChange,
+    onCloseSearch,
   } = props;
 
   return (
@@ -38,9 +38,9 @@ function SearchBar(props) {
 }
 
 SearchBar.propTypes = {
-  onCloseSearch: PropTypes.func.isRequired,
-  onChange: PropTypes.func.isRequired,
   placeholder: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  onCloseSearch: PropTypes.func.isRequired,
 };
 
 

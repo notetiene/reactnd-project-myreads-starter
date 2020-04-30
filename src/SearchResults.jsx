@@ -15,9 +15,9 @@ class SearchResults extends Component {
    * {@link SearchResults} constructor.
    * @param {object} props - A properties object.
    * @param {string} props.query - The query for matching a list of books.
+   * @param {Book[]} props.books - A list of Book in already parent state.
    * @param {function} props.onMoveBook - A function to move a book to an other bookshelf.
    * @param {string[]} props.bookShelfList - A list of bookshelf to move the book in.
-   * @param {Book[]} props.books - A list of Book in already parent state.
    */
   constructor(props) {
     super(props);
@@ -61,10 +61,10 @@ class SearchResults extends Component {
    */
   render() {
     const {
-      bookShelfList,
-      books,
       query,
+      books,
       onMoveBook,
+      bookShelfList,
     } = this.props;
 
     const {
@@ -132,8 +132,8 @@ SearchResults.propTypes = {
     coverHeight: PropTypes.number.isRequired,
     coverURL: PropTypes.string.isRequired,
   })).isRequired,
-  bookShelfList: PropTypes.arrayOf(PropTypes.string).isRequired,
   onMoveBook: PropTypes.func.isRequired,
+  bookShelfList: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default SearchResults;
