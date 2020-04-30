@@ -12,7 +12,7 @@ import SearchInput from './SearchInput';
  * {@link SearchBookPage}.
  * @returns {Component} The new or updated component.
  */
-function SearchBar(props) {
+function SearchBookBar(props) {
   const {
     placeholder,
     onChange,
@@ -38,11 +38,11 @@ function SearchBar(props) {
   );
 }
 
-SearchBar.propTypes = {
+SearchBookBar.propTypes = {
   placeholder: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   onCloseSearch: PropTypes.func.isRequired,
 };
 
 
-export default SearchBar;
+export default SearchBookBar;

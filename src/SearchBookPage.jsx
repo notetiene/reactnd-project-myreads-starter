@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import SearchBar from './SearchBar';
+import SearchBookBar from './SearchBookBar';
 import SearchResults from './SearchResults';
 
 
@@ -44,7 +44,7 @@ class SearchBookPage extends Component {
   }
 
   /**
-   * Render a {@link SearchBookPage} using a {@link SearchBar} component and a {@link SearchResults}
+   * Render a {@link SearchBookPage} using a {@link SearchBookBar} component and a {@link SearchResults}
    * component.
    * @returns {Component} The new or updated component.
    */
@@ -62,7 +62,7 @@ class SearchBookPage extends Component {
 
     return (
       <div className="search-books">
-        <SearchBar
+        <SearchBookBar
           onCloseSearch={onCloseSearch}
           onChange={this.handleInputChange}
           placeholder="Search by title or author"
