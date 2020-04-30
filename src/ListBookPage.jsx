@@ -3,6 +3,16 @@ import PropTypes from 'prop-types';
 import shortid from 'shortid';
 import BookShelf from './BookShelf';
 
+/**
+ * Page to show the list of books actually registered in {@link props.bookShelves}
+ * @class
+ * @param {object} props - A properties object.
+ * @param {Book[]} props.books - A list of {@link Book} to show.
+ * @param {string[]} props.bookShelves - A list of bookshelf names in their displayed form.
+ * @param {function} props.onOpenSearch - Function to execute when quitting the current page to the {@link SearchPage}.
+ * @param {function} props.onMoveBook - Function to executed when (re)moving a {@link Book} from a bookshelf.
+ * @returns {Component} The new or updated component.
+ */
 function ListBookPage(props) {
   const {
     books,

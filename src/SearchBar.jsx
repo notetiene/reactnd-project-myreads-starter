@@ -2,6 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import SearchInput from './SearchInput';
 
+/**
+ * Search bar component that contains main controls of a {@link SearchPage}.
+ * @class
+ * @param {object} props - A properties object.
+ * @param {function} props.onCloseSearch - Function to execute when closing the current {@link SearchPage}.
+ * @param {function} props.onChange - Function to handle changes in search input value.
+ * @param {string} props.placeholder - Default text to show when input is empty.
+ * @returns {Component} The new or updated component.
+ */
 function SearchBar(props) {
   const {
     onCloseSearch,
@@ -19,21 +28,10 @@ function SearchBar(props) {
         Close
       </button>
       <div className="search-books-input-wrapper">
-        {/*
-           NOTES: The search from BooksAPI is limited to a particular set of search terms.
-           You can find these search terms here:
-           https://github.com/udacity/reactnd-project-myreads-starter/blob/master/SEARCH_TERMS.md
-
-           However, remember that the BooksAPI.search method
-           DOES search by title or author. So, don't worry if
-           you don't find a specific author or title. Every
-           search is limited by search terms.
-         */}
         <SearchInput
           onChange={onChange}
           placeholder={placeholder}
         />
-
       </div>
     </div>
   );

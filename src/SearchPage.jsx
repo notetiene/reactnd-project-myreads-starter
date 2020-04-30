@@ -4,7 +4,19 @@ import SearchBar from './SearchBar';
 import SearchResults from './SearchResults';
 
 
+/**
+ * A page to search remote books to add/move to a bookshelf.
+ */
 class SearchPage extends Component {
+  /**
+   * {@link SearchPage} constructor
+   * @constructor
+   * @param {object} props - A properties object.
+   * @param {function} props.onCloseSearch - A function to quit the SearchPage component.V
+   * @param {function} props.onMoveBook - A function to move a book to an other bookshelf.
+   * @param {string[]} props.bookShelves - A list of bookshelf to move the book in.
+   * @param {Book[]} props.books - A list of Book already in parent state.
+   */
   constructor(props) {
     super(props);
 
@@ -13,6 +25,10 @@ class SearchPage extends Component {
     };
   }
 
+  /**
+   * Handle input change from the {@link SearchInput} component.  This sets the state to the new query to be passed to {@link SearchResuls}.
+   * @param {Event} event - Change event when the input has changed its value.
+   */
   handleInputChange = (event) => {
     const {
       target: {
@@ -25,6 +41,10 @@ class SearchPage extends Component {
     }));
   }
 
+  /**
+   * Render a {@link SearchPage} using a {@link SearchBar} component and a {@link SearchResults} component.
+   * @returns {Component} The new or updated component.
+   */
   render() {
     const {
       onCloseSearch,

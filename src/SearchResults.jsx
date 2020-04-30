@@ -4,7 +4,21 @@ import shortid from 'shortid';
 import Book from './Book';
 import * as BooksAPI from './BooksAPI';
 
+/**
+ * A list of Book matching a specific query.  The list is limited to
+ * 20 books according to the API used.
+ * @extends Component
+ */
 class SearchResults extends Component {
+
+  /**
+   * {@link SearchResults} constructor.
+   * @param {object} props - A properties object.
+   * @param {string} props.query - The query for matching a list of books.
+   * @param {function} props.onMoveBook - A function to move a book to an other bookshelf.
+   * @param {string[]} props.bookShelfList - A list of bookshelf to move the book in.
+   * @param {Book[]} props.books - A list of Book in already parent state.
+   */
   constructor(props) {
     super(props);
 
@@ -13,6 +27,11 @@ class SearchResults extends Component {
     };
   }
 
+  /**
+   * When the query is updated, call {@link updateBookList}.
+   * @param {object} prevProps - A properties object.
+   * @param {string} props.query - The query for matching a list of books.
+   */
   componentDidUpdate(prevProps) {
     const {
       query,
@@ -23,14 +42,23 @@ class SearchResults extends Component {
     }
   }
 
+  /**
+   * Update the {@link SearchResults.state.results} to the new results.
+   * @param {string} query - The query for matching a list of books.
+   */
   updateBookList = (query) => {
     BooksAPI.search(query).then((books = []) => {
       this.setState(() => ({
+        // When query gives an error, return an empty array
         results: books.error ? [] : books,
       }));
     });
   }
 
+  /**
+   * Render a {@link SearchResults} using {@link Book} components.
+   * @returns {Component} The new or updated component.
+   */
   render() {
     const {
       bookShelfList,

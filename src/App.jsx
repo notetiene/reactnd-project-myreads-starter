@@ -5,7 +5,15 @@ import './App.css';
 import SearchPage from './SearchPage';
 import ListBookPage from './ListBookPage';
 
+/**
+ * Main application component of the project.
+ * @param {object} props - A properties object.  Not in use.
+ */
 class BooksApp extends React.Component {
+  /**
+   * Initialize the {@link BookApp} component with dummy values (in case network has problems).
+   * @param {object} props - A properties object.  Not in use.
+   */
   constructor(props) {
     super(props);
 
@@ -77,6 +85,10 @@ class BooksApp extends React.Component {
     };
   }
 
+  /**
+   * When the component is mounted, update the list of {@link Book} using {@link BooksAPI}.
+   * @async
+   */
   async componentDidMount() {
     const bookList = await BooksAPI.getAll();
     const books = bookList.map((book) => {
@@ -106,6 +118,10 @@ class BooksApp extends React.Component {
     }));
   }
 
+  /**
+   * Remove a {@link Book} from recorded books ({@link Book.state.books}) and remote registry.
+   * @param {string} bookID - A unique identifier for the book.  Id provided by {@link BooksAPI}.
+   */
   removeBook = (bookID) => {
     this.setState((oldState) => {
       const book = this.getBook(bookID);
@@ -118,6 +134,11 @@ class BooksApp extends React.Component {
     });
   }
 
+  /**
+   * Get a {@link Book} from {@link Book.state.books}.
+   * @param {string} bookID - A unique identifier for the book.  Id provided by {@link BooksAPI}.
+   * @returns {Book} A book object.
+   */
   getBook = (bookID) => {
     const {
       books,
@@ -126,6 +147,11 @@ class BooksApp extends React.Component {
     return books.find((book) => (book.id === bookID));
   }
 
+  /**
+   * Add a book to the recorded books ({@link Book.state.books}) and remote registry.
+   * @param {string} bookID - A unique identifier for the book.  Id provided by {@link BooksAPI}.
+   * @param {string} bookShelf - Bookshelf to add the book to.  Must be the canonical form (camelCase).
+   */
   addBook = async (bookID, bookShelf) => {
     const {
       title,
@@ -153,6 +179,11 @@ class BooksApp extends React.Component {
     }, bookShelf);
   }
 
+  /**
+   * Move a specified book to an other bookshielf.
+   * @param {string} bookID - A unique identifier for the book.  Id provided by {@link BooksAPI}.
+   * @param {string} bookShelf - Bookshelf to add the book to.  Must be the canonical form (camelCase).
+   */
   moveBook = (bookID, bookShelf) => {
     this.setState((oldState) => {
       const {
@@ -166,6 +197,11 @@ class BooksApp extends React.Component {
     });
   }
 
+  /**
+   * Act on the book registry according to user input.
+   * @param {string} bookID - A unique identifier for the book.  Id provided by {@link BooksAPI}.
+   * @param {string} bookShelf - Bookshelf to add/(re)move the book.  Must be the canonical form (camelCase).  If “none”, remove book.
+   */
   onMoveBook = (bookID, bookShelf) => {
     const {
       books,
@@ -181,6 +217,10 @@ class BooksApp extends React.Component {
     }
   }
 
+  /**
+   * Render a {@link BookApp} using {@link ListBookPage} and {@link SearchPage} components.
+   * @returns {Component} The new or updated component.
+   */
   render() {
     const {
       books,

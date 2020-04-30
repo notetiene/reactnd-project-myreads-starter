@@ -1,3 +1,8 @@
+/**
+ * Transform a string to camelCase form.
+ * @param {string} str - The string to transform.
+ * @returns {string} The new transformed string.
+ */
 const toCamelCase = (str) => {
   const newStr = str.trim().toLocaleLowerCase();
 
