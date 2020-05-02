@@ -9,6 +9,7 @@ let {
 
 if (!token) {
   token = Math.random().toString(36).substr(-8);
+  localStorage.token = token;
 }
 
 const headers = {
