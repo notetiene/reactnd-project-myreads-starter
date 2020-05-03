@@ -187,6 +187,10 @@ class BooksApp extends React.Component {
    * (camelCase).
    */
   moveBook = (bookID, bookShelf) => {
+    BooksAPI.update({
+      id: bookID,
+    }, bookShelf);
+
     this.setState((oldState) => {
       const {
         books,
